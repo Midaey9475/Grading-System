@@ -69,28 +69,30 @@ const caAvTotal = document.getElementById('caAvTotal')
 const exAvTotal = document.getElementById('exAvTotal')
 const sumTotalAv = document.getElementById('overallAvTotal')
 const avGrade = document.getElementById('avGrade')
-// Extracting each of the CA into an array
-const allCa = []
-allCa[0] = +document.getElementById('engCA').value  // The + sign turns each data into a Number instead of the initial string data it is
-allCa[1] = +document.getElementById('mthCA').value  // .value extract the value in the input
-allCa[2] = +document.getElementById('phyCA').value
-allCa[3] = +document.getElementById('chemCA').value
-allCa[4] = +document.getElementById('bioCA').value
-allCa[5] = +document.getElementById('geoCA').value
-allCa[6] = +document.getElementById('econCA').value
-allCa[7] = +document.getElementById('yorubaCA').value
-// Extracting each of the Exam into an array
-const allExam = []
-allExam[0] = +document.getElementById('engEx').value
-allExam[1] = +document.getElementById('mthEx').value
-allExam[2] = +document.getElementById('phyEx').value
-allExam[3] = +document.getElementById('chemEx').value
-allExam[4] = +document.getElementById('bioEx').value
-allExam[5] = +document.getElementById('geoEx').value
-allExam[6] = +document.getElementById('econEx').value
-allExam[7] = +document.getElementById('yorubaEx').value
+
 // === EventHandler Button
 getAvButton.addEventListener('click', ()=>{
+    // Extracting each of the CA into an array
+    const allCa = []
+    allCa[0] = +document.getElementById('engCA').value  // The + sign turns each data into a Number instead of the initial string data it is
+    allCa[1] = +document.getElementById('mthCA').value  // .value extract the value in the input
+    allCa[2] = +document.getElementById('phyCA').value
+    allCa[3] = +document.getElementById('chemCA').value
+    allCa[4] = +document.getElementById('bioCA').value
+    allCa[5] = +document.getElementById('geoCA').value
+    allCa[6] = +document.getElementById('econCA').value
+    allCa[7] = +document.getElementById('yorubaCA').value
+// Extracting each of the Exam into an array
+    const allExam = []
+    allExam[0] = +document.getElementById('engEx').value
+    allExam[1] = +document.getElementById('mthEx').value
+    allExam[2] = +document.getElementById('phyEx').value
+    allExam[3] = +document.getElementById('chemEx').value
+    allExam[4] = +document.getElementById('bioEx').value
+    allExam[5] = +document.getElementById('geoEx').value
+    allExam[6] = +document.getElementById('econEx').value
+    allExam[7] = +document.getElementById('yorubaEx').value
+    // Calculating the values
     caAvTotal.innerHTML = Math.round(allCa.reduce((a,b)=>{return a + b}) / allCa.length)
     exAvTotal.innerHTML = Math.round(allExam.reduce((a,b)=>{return a + b}) / allExam.length)
     calculatedCaAv = +caAvTotal.innerHTML
@@ -127,167 +129,6 @@ getAvButton.addEventListener('click', ()=>{
     else {resultComment.innerHTML = `Great!!! keep it up, the sky is the limit`}
     resultContainer.style.display = 'grid'
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // === Refactor of code after more studies to avoid Repetition (DRY) ====
-// const studentName = document.getElementById('studentName')
-// const studentClass = document.getElementById('studentClass')
-// const theName = document.querySelector('.theName')
-// const theClass = document.querySelector('.theClass')
-// const submitInfo = document.getElementById('submitCredentials')
-// // === Mapping the student inputed credentials to the required slot
-// submitInfo.addEventListener('click' , ()=>{
-//     theName.innerHTML = studentName.value
-//     theClass.innerHTML = studentClass.value
-// })
-// // Storing each subjects and it characteristics in an array making sure the value tally with it ID for easy extraction
-// const subjects = [
-//     {subjectName: 'eng', CA: 'engCA', Exam: 'engEx', getScore: 'engTotal', totalScore: 'engScore', grade: 'engGrade'},
-//     {subjectName: 'mth', CA: 'mthCA', Exam: 'mthEx', getScore: 'mthTotal', totalScore: 'mthScore', grade: 'mthGrade'},
-//     {subjectName: 'phy', CA: 'phyCA', Exam: 'phyEx', getScore: 'phyTotal', totalScore: 'phyScore', grade: 'phyGrade'},
-//     {subjectName: 'chem', CA: 'chemCA', Exam: 'chemEx', getScore: 'chemTotal', totalScore: 'chemScore', grade: 'chemGrade'},
-//     {subjectName: 'bio', CA: 'bioCA', Exam: 'bioEx', getScore: 'bioTotal', totalScore: 'bioScore', grade: 'bioGrade'},
-//     {subjectName: 'geo', CA: 'geoCA', Exam: 'geoEx', getScore: 'geoTotal', totalScore: 'geoScore', grade: 'geoGrade'},
-//     {subjectName: 'econ', CA: 'econCA', Exam: 'econEx', getScore: 'econTotal', totalScore: 'econScore', grade: 'econGrade'},
-//     {subjectName: 'yoruba', CA: 'yorubaCA', Exam: 'yorubaEx', getScore: 'yorubaTotal', totalScore: 'yorubaScore', grade: 'yorubaGrade'},
-// ]
-// // Extracting each of the subject as an entity
-// subjects.forEach((subject)=>{
-//     const caInput = document.getElementById(subject.CA)
-//     const exInput = document.getElementById(subject.Exam)
-//     const calcScore = document.getElementById(subject.getScore)
-//     const totalScore = document.getElementById(subject.totalScore)
-//     const grading = document.getElementById(subject.grade)
-
-//     // == To get each calculation done
-//     calcScore.addEventListener('click', ()=>{
-//         const theCA = caInput.value
-//         const theEx = exInput.value
-//         totalScore.innerHTML = Number(theCA) + Number(theEx)
-//         // == Creating the Grading system
-//         if (totalScore.innerHTML < 39){grading.innerHTML = 'F'}
-//         else if (totalScore.innerHTML <= 40){grading.innerHTML = 'E'}
-//         else if (totalScore.innerHTML <= 49){grading.innerHTML = 'D'}
-//         else if (totalScore.innerHTML <= 54){grading.innerHTML = 'CD'}
-//         else if (totalScore.innerHTML <= 59){grading.innerHTML = 'C'}
-//         else if (totalScore.innerHTML <= 64){grading.innerHTML = 'BC'}
-//         else if (totalScore.innerHTML <= 69){grading.innerHTML = 'BC'}
-//         else if (totalScore.innerHTML <= 74){grading.innerHTML = 'B'}
-//         else {grading.innerHTML = 'A'}
-//     })
-//     // == To control figures that can be inputed into the caInput and exInput
-//     caInput.addEventListener('input', ()=>{
-//         if (caInput.value > 40){
-//             alert (`Continous Assesment score cannot be more than 40`)
-//             caInput.value = ''
-//         }
-//     })
-//     exInput.addEventListener('input', ()=>{
-//         if (exInput.value > 70){
-//             alert (`Exam score cannot be more than 60 marks`)
-//             exInput.value = ''
-//         }
-//     })
-// })
-// // === Overall Totals
-// const avTotal = document.getElementById('avTotal')
-// const caAvTotal = document.getElementById('caAvTotal')
-// const exAvTotal = document.getElementById('exAvTotal')
-// const overallAvTotal = document.getElementById('overallAvTotal')
-// const avGrade = document.getElementById('avGrade')
-// avTotal.addEventListener('click', ()=>{
-//     // Getting CA score
-//     const avCaScore = []
-//     avCaScore[0] = Number(document.getElementById('engCA').value)
-//     avCaScore[1] = Number(document.getElementById('mthCA').value)
-//     avCaScore[2] = Number(document.getElementById('phyCA').value)
-//     avCaScore[3] = Number(document.getElementById('chemCA').value)
-//     avCaScore[4] = Number(document.getElementById('bioCA').value)
-//     avCaScore[5] = Number(document.getElementById('geoCA').value)
-//     avCaScore[6] = Number(document.getElementById('econCA').value)
-//     avCaScore[7] = Number(document.getElementById('yorubaCA').value)
-//     caAvTotal.innerHTML = Math.round(avCaScore.reduce((a,b)=>{return a+b}) / 8)
-
-
-//     // Getting Exam score
-//     const avExScore = []
-//     avExScore[0] = Number(document.getElementById('engEx').value)
-//     avExScore[1] = Number(document.getElementById('mthEx').value)
-//     avExScore[2] = Number(document.getElementById('phyEx').value)
-//     avExScore[3] = Number(document.getElementById('chemEx').value)
-//     avExScore[4] = Number(document.getElementById('bioEx').value)
-//     avExScore[5] = Number(document.getElementById('geoEx').value)
-//     avExScore[6] = Number(document.getElementById('econEx').value)
-//     avExScore[7] = Number(document.getElementById('yorubaEx').value)
-//     exAvTotal.innerHTML = Math.round(avExScore.reduce((a,b)=>{return a+b}) / 8)
-
-//     overallAvTotal.innerHTML = (Number(caAvTotal.innerHTML)) + (Number(exAvTotal.innerHTML))
-    
-//     if (overallAvTotal.innerHTML < 39){avGrade.innerHTML = 'F'}
-//     else if (overallAvTotal.innerHTML <= 40){avGrade.innerHTML = 'E'}
-//     else if (overallAvTotal.innerHTML <= 49){avGrade.innerHTML = 'D'}
-//     else if (overallAvTotal.innerHTML <= 54){avGrade.innerHTML = 'CD'}
-//     else if (overallAvTotal.innerHTML <= 59){avGrade.innerHTML = 'C'}
-//     else if (overallAvTotal.innerHTML <= 64){avGrade.innerHTML = 'BC'}
-//     else if (overallAvTotal.innerHTML <= 69){avGrade.innerHTML = 'BC'}
-//     else if (overallAvTotal.innerHTML <= 74){avGrade.innerHTML = 'B'}
-//     else {avGrade = 'A'}
-
-
-// })
 
 
 
