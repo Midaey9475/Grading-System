@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100svh;
+}
+header{
+    position: relative;
+    text-align: center;
+    font-family: cursive;
+    color: #440829;
+    text-shadow: 1px 5px 15px #f7adee;
+    font-size: 1.5rem;
+    padding: 10px;
+    b{
+        font-style: oblique;
+        text-decoration: underline;
+    }
+}
+#studentInfo{
+    margin-top: 40px;
+    font-family: cursive;
+    fieldset{
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        margin: auto;
+        row-gap: 20px;
+        font-size: 1rem;
+        padding: 15px;
+        border-radius: 10px;
+        color: #440829;
+        div{
+            display: flex;
+            align-items: center;
+            column-gap: 20px;
+            justify-content: space-between;
+            }
+            input{
+                height: 40px;
+                border-radius: 10px;
+                background-color: transparent;
+                border: 1px solid #3434ad;
+                width: 30vw;
+                padding-left: 10px;
+                font-size: large;
+                font-weight: bold;
+            }
+        input:focus{
+            outline: none;
+        }
+        .submit button{
+            text-decoration: none;
+            color: #fff;
+            border: none;
+            padding: 8px 50px;
+            font-size: 1rem;
+            border-radius: 12px;
+            margin: auto;
+            background: #3434ad;
+            transition: .8s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+        .submit button:hover{
+            background: #440829;
+        }
+    }
+}
+#recordContainer{
+    padding: 20px;
+    display: grid;
+    row-gap: 20px;
+    font-size: 1rem;
+    font-family: fantasy;
+    .mapName{
+        height: 50px;
+        width: 70%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        column-gap: 50px;
+        font-size: .7rem;
+        div{
+            flex: 1;
+        }
+    }
+    table,tr,th,td{
+        border: 1px solid #440829;
+        border-collapse: collapse;
+        padding: 10px;
+        font-weight: 400;
+        font-size: large;
+        letter-spacing: 1.5px;
+    }
+    th{
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+    table tr td input{
+        height: inherit;
+        width: 100%;
+        background: transparent;
+        border: none;
+        text-align: center;
+        font-weight: bold;
+        font-size: large;
+    }
+    input:focus{
+        outline: none;
+    }
+    button{
+        background: #f7adee;
+        padding: 8px 5px;
+        min-width: 80px;
+        border-radius: 10px;
+        border: none;
+        font-size: 10px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    button:hover{background-color: #440829; color: #fff;}
+}
+.resultTexts{
+    padding: 40px;
+    row-gap: 20px;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #440829;
+    font-family: fantasy;
+    display: none;
+}

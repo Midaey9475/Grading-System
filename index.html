@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grading System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Container for the school Name and if possible logo -->
+    <header>
+        <h1>JoAk High School</h1>
+        <b>Grade Book</b>
+    </header>
+    <!-- Container for the student's information -->
+    <section id="studentInfo">
+        <fieldset>
+            <legend style="margin: auto; padding: 0px 10px;">Student's Credentials</legend>
+            <div>
+                <label for="Name">Name:</label>
+                <input type="text" placeholder="Student's Name" id="studentName" name="Name">
+            </div>
+            <div>
+                <label for="Class">Class:</label>
+                <input type="text" placeholder="Student's Class" id="studentClass" name="Class">
+            </div>
+            <div class="submit">
+                <button id="submitCredentials">Submit</button>
+            </div>
+        </fieldset>
+    </section>
+    <!-- The Record container -->
+    <section id="recordContainer">
+            <div class="mapName">
+                <div><h2>Name:&ensp;<span class="theName" style="text-transform: capitalize;"></span></h2></div>
+                <div><h2>Class:&ensp;Senior Secondary School&nbsp;<span class="theClass" style="text-transform: uppercase;"></span></h2></div>
+            </div>
+        <div class="records">
+            <table style="width: 60%; margin: auto;">
+                <tr>
+                    <th>Subjects</th>
+                    <th>C.A Score</th>  
+                    <th>Exam Score</th>
+                    <th></th>
+                    <th>Total Score</th>
+                    <th>Grade</th>
+                </tr>
+                <tr>
+                    <td>English</td>
+                    <td><input type="text" id="engCA" maxlength="3"></td>
+                    <td><input type="text" id="engEx" maxlength="3"></td>
+                    <td><button id="engTotal">Get Score</button></td>
+                    <td id="engScore" style="text-align: center; font-weight: bold;"></td>
+                    <td id="engGrade" style="text-align: center; font-weight: bold;"></td>
+                </tr>
+                <tr>
+                    <td>Mathemetics</td>
+                    <td><input type="text" id="mthCA" maxlength="3"></td>
+                    <td><input type="text" id="mthEx" maxlength="3"></td>
+                    <td><button id="mthTotal">Get Score</button></td>
+                    <td id="mthScore" style="text-align: center; font-weight: bold;"></td>
+                    <td id="mthGrade" style="text-align: center; font-weight: bold;"></td>
+                </tr>
+                <tr>
+                    <td>Physics</td>
+                    <td><input type="text" id="phyCA" maxlength="3"></td>
+                    <td><input type="text" id="phyEx" maxlength="3"></td>
+                    <td><button id="phyTotal">Get Score</button></td>
+                    <td id="phyScore" style="text-align: center; font-weight: bold;"></td>
+                    <td id="phyGrade" style="text-align: center; font-weight: bold;"></td>
+                </tr>
+                <tr>
+                    <td>Chemistry</td>
+                    <td><input type="text" id="chemCA" maxlength="3"></td>
+                    <td><input type="text" id="chemEx" maxlength="3"></td>
+                    <td><button id="chemTotal">Get Score</button></td>
+                    <td id="chemScore" style="text-align: center; font-weight: bold;"></td>
+                    <td id="chemGrade" style="text-align: center; font-weight: bold;"></td>
+                </tr>
+                <tr>
+                    <td>Biology</td>
+                    <td><input type="text" id="bioCA" maxlength="3"></td>
+                    <td><input type="text" id="bioEx" maxlength="3"></td>
+                    <td><button id="bioTotal">Get Score</button></td>
+                    <td id="bioScore" style="text-align: center; font-weight: bold;"></td>
+                    <td id="bioGrade" style="text-align: center; font-weight: bold;"></td>
+                </tr>
+                <tr>
+                    <td>Geography</td>
+                    <td><input type="text" id="geoCA" maxlength="3"></td>
+                    <td><input type="text" id="geoEx" maxlength="3"></td>
+                    <td><button id="geoTotal">Get Score</button></td>
+                    <td id="geoScore" style="text-align: center; font-weight: bold;"></td>
+                    <td id="geoGrade" style="text-align: center; font-weight: bold;"></td>
+                </tr>
+                <tr>
+                    <td>Economics</td>
+                    <td><input type="text" id="econCA" maxlength="3"></td>
+                    <td><input type="text" id="econEx" maxlength="3"></td>
+                    <td><button id="econTotal">Get Score</button></td>
+                    <td id="econScore" style="text-align: center; font-weight: bold;"></td>
+                    <td id="econGrade" style="text-align: center; font-weight: bold;"></td>
+                </tr>
+                <tr>
+                    <td>Yoruba</td>
+                    <td><input type="text" id="yorubaCA" maxlength="3"></td>
+                    <td><input type="text" id="yorubaEx" maxlength="3"></td>
+                    <td><button id="yorubaTotal">Get Score</button></td>
+                    <td id="yorubaScore" style="text-align: center; font-weight: bold;"></td>
+                    <td id="yorubaGrade" style="text-align: center; font-weight: bold;"></td>
+                </tr>
+                <tr>
+                    <td><button id="avTotal">Approximate Average Score</button></td>
+                    <td id="caAvTotal" style="text-align: center; font-weight: bold;"></td>
+                    <td id="exAvTotal" style="text-align: center; font-weight: bold;"></td>
+                    <td></td>
+                    <td id="overallAvTotal" style="text-align: center; font-weight: bold;"></td>
+                    <td id="avGrade" style="text-align: center; font-weight: bold;"></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <div class="resultTexts">
+        <b>
+            <span id="candidateName"></span>; Your Overall average score is <span id="candidateAvScore"></span>
+        </b>
+        <b>Grade:&ensp;<span id="candidateGrade"></span></b>
+        <b id="resultComment"></b>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
