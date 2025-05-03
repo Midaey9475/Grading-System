@@ -100,7 +100,7 @@ getAvButton.addEventListener('click', ()=>{
     sumTotalAv.innerHTML = calculatedCaAv + calculatedExAv
     calculatedAv = sumTotalAv.innerHTML
     // ----- Grading ----
-    if (calculatedAv < 39){grade.innerHTML = 'F'}
+    if (calculatedAv < 39){avGrade.innerHTML = 'F'}
     else if (calculatedAv <= 40){avGrade.innerHTML = 'E'}
     else if (calculatedAv <= 49){avGrade.innerHTML = 'D'}
     else if (calculatedAv <= 54){avGrade.innerHTML = 'CD'}
